@@ -263,6 +263,7 @@ def main():
             # ballparks 14  15columns
 
 
+                # get each row from the db and make an object 
                 trip = details.TripDetails(record[0], record[1], record[3], record[6], record[7], record[10],
                                                        record[9], record[11],record[12],record[13],processballparks(record[14]))
                 trips.append(trip)

@@ -6,7 +6,7 @@ def open_db_connection():
     port_number = 3306
     user_name = 'root'
     password = 'test1234!'
-    database_name = 'testRide'
+    database_name = 'RideSharingTrips'
     connection_object = pymysql.connect(host=host_name, port=port_number,
                                         user=user_name, passwd=password, db=database_name)
     return connection_object

@@ -13,9 +13,10 @@ df = pd.read_csv("yellow_tripdata_2016-01.csv")
 df = df.drop(df[(df.passenger_count < 0) | (df.passenger_count > 2) | (df.dropoff_longitude == 0) | (df.dropoff_latitude == 0) | (df.pickup_longitude == 0) | (df.pickup_latitude == 0) | (df.RatecodeID != 2) ].index)
 # df.shape #(185,034, 19)
 
+# drop unnecessary columns 
 df= df.drop(['VendorID','RatecodeID', 'store_and_fwd_flag', 'payment_type', 'extra', 'mta_tax','tip_amount','tolls_amount','improvement_surcharge','fare_amount', 'total_amount'], axis=1)
 
-# drop unnecessary columns 
+
 #rounding the lat long to 4 digits to make it manageable
 df['pickup_latitude'] = df['pickup_latitude'].apply(lambda x: round(x,4))
 df['dropoff_latitude'] = df['dropoff_latitude'].apply(lambda x: round(x,4))
